@@ -1,0 +1,18 @@
+.testimonials {
+  background-color: var(--bg-secondary);
+}
+
+.reviews-feed-container {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .reviews-feed-container {
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+  }
+}
