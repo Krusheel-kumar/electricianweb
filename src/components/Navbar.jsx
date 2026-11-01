@@ -18,7 +18,7 @@ const Navbar = ({ onOpenConsultation }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -38,17 +38,13 @@ const Navbar = ({ onOpenConsultation }) => {
     <>
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
         <div className="container nav-container">
-          {/* Brand Logo */}
+          {/* Brand Logo with Image */}
           <a href="#" className="logo-wrapper" onClick={closeMenu}>
-            <div className="logo-badge-3d">
-              <span className="logo-initials">VL</span>
-              <div className="logo-shimmer"></div>
-              <Sparkle weight="fill" className="logo-sparkle" />
-            </div>
-            <div className="logo-text">
-              <span className="logo-main">VenkeyLavy</span>
-              <span className="logo-sub">INTERIORS & LIGHTING</span>
-            </div>
+            <img 
+              src="/assets/logo.png" 
+              alt="VenkeyLavy Interiors" 
+              className="navbar-brand-logo"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -86,19 +82,20 @@ const Navbar = ({ onOpenConsultation }) => {
             onClick={toggleMenu} 
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X weight="bold" size={26} /> : <List weight="bold" size={26} />}
+            {menuOpen ? <X weight="bold" size={24} /> : <List weight="bold" size={24} />}
           </button>
         </div>
 
-        {/* Mobile Slide-Out Drawer */}
+        {/* Mobile Slide-Out Drawer in Light Theme */}
         <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobileMenu">
           <div className="mobile-menu-header">
-            <div className="logo-text">
-              <span className="logo-main">VenkeyLavy</span>
-              <span className="logo-sub">INTERIORS</span>
-            </div>
+            <img 
+              src="/assets/logo.png" 
+              alt="VenkeyLavy Interiors" 
+              className="mobile-brand-logo"
+            />
             <button className="mobile-close-btn" onClick={closeMenu}>
-              <X size={24} weight="bold" />
+              <X size={22} weight="bold" />
             </button>
           </div>
 
@@ -109,7 +106,7 @@ const Navbar = ({ onOpenConsultation }) => {
             </a>
             <a href="#lighting-simulator" className="mobile-link" onClick={closeMenu}>
               <LightbulbFilament size={20} weight="duotone" />
-              <span>3D Lighting & Space Lab</span>
+              <span>3D Space & Lighting Lab</span>
             </a>
             <a href="#portfolio" className="mobile-link" onClick={closeMenu}>
               <Images size={20} weight="duotone" />

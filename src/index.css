@@ -1,27 +1,30 @@
 :root {
-  /* Ultra-Luxury Obsidian & Champagne Gold Palette */
-  --bg-primary: #08090C;
-  --bg-secondary: #0E1118;
-  --bg-tertiary: #151A24;
-  --bg-card: rgba(20, 24, 34, 0.75);
-  --bg-card-hover: rgba(28, 34, 48, 0.9);
-  --bg-glass: rgba(14, 17, 24, 0.7);
-  --bg-glass-heavy: rgba(8, 9, 12, 0.85);
+  /* Ultra-Luxury Architectural Light Palette (Ivory, Travertine & Royal Gold) */
+  --bg-primary: #FAF9F5;       /* Warm Ivory Alabaster */
+  --bg-secondary: #F3EFE6;     /* Warm Travertine Linen */
+  --bg-tertiary: #EAE5D9;      /* Subtle Warm Stone */
+  --bg-card: #FFFFFF;          /* Crisp White Elevated Cards */
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-heavy: rgba(250, 249, 245, 0.95);
 
-  --text-main: #FBFBFC;
-  --text-secondary: #D4D8E2;
-  --text-muted: #8E96A5;
+  /* Typography Colors matching Logo Deep Navy */
+  --text-main: #0B1424;        /* Deep Architectural Navy Charcoal */
+  --text-secondary: #4A5568;   /* Warm Slate */
+  --text-muted: #718096;       /* Neutral Muted Stone */
 
-  --accent-gold: #D4AF37;
-  --accent-gold-light: #F3E5AB;
-  --accent-gold-bright: #F7D070;
-  --accent-gold-dark: #997819;
-  --accent-glow: rgba(212, 175, 55, 0.35);
-  --accent-glow-subtle: rgba(212, 175, 55, 0.12);
+  /* Gold Palette matching Logo Golden Accents */
+  --accent-gold: #C59A27;       /* Royal Brushed Gold */
+  --accent-gold-light: #B3861B; /* Deeper for text readability on light */
+  --accent-gold-bright: #D8A932;
+  --accent-gold-dark: #8F6A10;
+  --accent-glow: rgba(197, 154, 39, 0.25);
+  --accent-glow-subtle: rgba(197, 154, 39, 0.08);
 
-  --border-subtle: rgba(212, 175, 55, 0.16);
-  --border-focus: rgba(212, 175, 55, 0.5);
-  --border-card: rgba(255, 255, 255, 0.08);
+  /* Subtle Architectural Borders */
+  --border-subtle: rgba(11, 20, 36, 0.08);
+  --border-focus: rgba(197, 154, 39, 0.5);
+  --border-card: rgba(11, 20, 36, 0.06);
 
   --font-heading: 'Cinzel', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -33,9 +36,10 @@
   --radius-lg: 22px;
   --radius-full: 9999px;
 
-  --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 12px 35px -8px rgba(212, 175, 55, 0.25);
-  --shadow-elevated: 0 20px 45px -12px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.08);
+  /* Luminous Light Shadows */
+  --shadow-subtle: 0 10px 30px -10px rgba(11, 20, 36, 0.07);
+  --shadow-gold: 0 12px 35px -8px rgba(197, 154, 39, 0.22);
+  --shadow-elevated: 0 20px 45px -12px rgba(11, 20, 36, 0.1), 0 0 20px rgba(197, 154, 39, 0.06);
 
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -65,7 +69,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background Atmospheric Mesh */
+/* Background Subtle Atmospheric Glow */
 body::before {
   content: '';
   position: fixed;
@@ -74,9 +78,9 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: 
-    radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
-    radial-gradient(circle at 85% 70%, rgba(181, 149, 47, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, rgba(30, 40, 60, 0.15) 0%, transparent 60%);
+    radial-gradient(circle at 10% 15%, rgba(197, 154, 39, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 75%, rgba(11, 20, 36, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(243, 239, 230, 0.6) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
@@ -136,9 +140,9 @@ img {
   }
 }
 
-/* Typography Helpers */
+/* Typography Helpers for Light Theme */
 .text-gradient {
-  background: linear-gradient(135deg, #FFF9EA 0%, #F5D67D 45%, #D4AF37 100%);
+  background: linear-gradient(135deg, #0B1424 0%, #C59A27 60%, #8F6A10 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -146,7 +150,7 @@ img {
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #F9E7B3 0%, #D4AF37 50%, #997819 100%);
+  background: linear-gradient(135deg, #B3861B 0%, #C59A27 50%, #8F6A10 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -158,11 +162,11 @@ img {
   gap: 0.5rem;
   padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid var(--border-subtle);
-  color: var(--accent-gold-light);
+  background: rgba(197, 154, 39, 0.09);
+  border: 1px solid rgba(197, 154, 39, 0.25);
+  color: var(--accent-gold-dark);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -190,17 +194,18 @@ img {
 
 .section-header h2 {
   font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  color: var(--text-main);
   margin-bottom: 1rem;
 }
 
 .section-header p {
   color: var(--text-secondary);
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
 }
 
-/* Glassmorphism Panel */
+/* Glassmorphism Panel - Clean White Luxury */
 .glass-panel {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
@@ -235,28 +240,30 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 55%, #A68019 100%);
-  color: #08090C;
-  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.45);
-  border: none;
+  background: linear-gradient(135deg, #0B1424 0%, #001C35 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px -4px rgba(0, 28, 53, 0.3);
+  border: 1px solid rgba(197, 154, 39, 0.3);
 }
 
 .btn-primary:hover {
+  background: linear-gradient(135deg, #C59A27 0%, #8F6A10 100%);
+  color: #FFFFFF;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 30px -4px rgba(212, 175, 55, 0.65);
+  box-shadow: 0 12px 30px -4px rgba(197, 154, 39, 0.45);
 }
 
 .btn-outline {
-  background: rgba(212, 175, 55, 0.04);
-  border: 1px solid var(--border-subtle);
-  color: var(--accent-gold-light);
-  backdrop-filter: blur(8px);
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 20, 36, 0.15);
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .btn-outline:hover {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(197, 154, 39, 0.08);
   border-color: var(--accent-gold);
-  color: #FFF;
+  color: var(--accent-gold-dark);
   transform: translateY(-2px);
 }
 
@@ -291,24 +298,17 @@ img {
   font-size: 0.82rem;
 }
 
-/* 3D Depth Card Utility */
-.card-3d {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090C;
+  background: #FAF9F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232A38;
+  background: #D5CFBF;
   border-radius: 4px;
 }
 
@@ -327,9 +327,4 @@ img {
   .hide-on-desktop {
     display: none !important;
   }
-}
-
-/* Prevent layout shift during transitions */
-.reveal {
-  opacity: 1;
 }

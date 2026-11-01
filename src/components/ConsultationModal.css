@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(4, 5, 8, 0.88);
+  background: rgba(11, 20, 36, 0.6);
   backdrop-filter: blur(16px);
   z-index: 2500;
   display: flex;
@@ -18,13 +18,35 @@
   position: relative;
   width: 100%;
   max-width: 520px;
-  background: rgba(16, 20, 30, 0.98);
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 2.2rem 2rem;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 30px 80px rgba(11, 20, 36, 0.2);
   max-height: 92vh;
   overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FAF9F5;
+  border: 1px solid rgba(11, 20, 36, 0.1);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--text-main);
+  color: #FFFFFF;
 }
 
 .modal-header {
@@ -37,11 +59,11 @@
   gap: 0.4rem;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.1);
+  color: var(--accent-gold-dark);
+  background: rgba(197, 154, 39, 0.1);
   padding: 0.25rem 0.7rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(197, 154, 39, 0.25);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 0.75rem;
@@ -75,16 +97,16 @@
 
 .modal-field label {
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-weight: 700;
+  color: var(--text-main);
 }
 
 .modal-field input,
 .modal-field select {
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
-  background: rgba(8, 10, 15, 0.8);
-  border: 1px solid var(--border-subtle);
+  background: #FAF9F5;
+  border: 1px solid rgba(11, 20, 36, 0.12);
   color: var(--text-main);
   font-family: inherit;
   font-size: 0.88rem;
@@ -93,14 +115,15 @@
 }
 
 .modal-field select option {
-  background: #0E121A;
-  color: #FFF;
+  background: #FFFFFF;
+  color: #0B1424;
 }
 
 .modal-field input:focus,
 .modal-field select:focus {
   border-color: var(--accent-gold);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  background: #FFFFFF;
+  box-shadow: 0 0 10px rgba(197, 154, 39, 0.25);
 }
 
 .modal-field-row {
@@ -119,12 +142,13 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.82rem;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: var(--text-secondary);
   transition: color var(--transition-fast);
 }
 
 .modal-call-link:hover {
-  color: var(--accent-gold-light);
+  color: var(--accent-gold-dark);
 }
 
 .modal-success-state {
@@ -139,7 +163,7 @@
 
 .modal-success-state h4 {
   font-size: 1.4rem;
-  color: var(--accent-gold-light);
+  color: var(--text-main);
   margin-bottom: 0.5rem;
 }
 

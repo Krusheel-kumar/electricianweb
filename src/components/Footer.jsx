@@ -7,17 +7,14 @@ const Footer = ({ onOpenConsultation }) => {
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
-          {/* Brand Info */}
+          {/* Brand Info with Logo Image */}
           <div className="footer-brand">
             <a href="#" className="logo-wrapper">
-              <div className="logo-badge-3d">
-                <span className="logo-initials">VL</span>
-                <Sparkle weight="fill" className="logo-sparkle" />
-              </div>
-              <div className="logo-text">
-                <span className="logo-main">VenkeyLavy</span>
-                <span className="logo-sub">INTERIORS & LIGHTING</span>
-              </div>
+              <img 
+                src="/assets/logo.png" 
+                alt="VenkeyLavy Interiors" 
+                className="footer-brand-logo"
+              />
             </a>
             <p className="brand-mission">
               Hyderabad’s premier turnkey interior design studio. We bring together bespoke modular woodworking, 
@@ -48,7 +45,7 @@ const Footer = ({ onOpenConsultation }) => {
           <div className="footer-links">
             <h4>Experience</h4>
             <ul>
-              <li><a href="#lighting-simulator">3D Lighting & Space Lab</a></li>
+              <li><a href="#lighting-simulator">3D Space & Lighting Lab</a></li>
               <li><a href="#estimator">Interior Cost Calculator</a></li>
               <li><a href="#before-after">Transformation Sliders</a></li>
               <li><a href="#portfolio">Featured Case Studies</a></li>

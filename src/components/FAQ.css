@@ -1,6 +1,6 @@
 .faq-section {
   position: relative;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
 }
 
 .faq-container {
@@ -14,15 +14,16 @@
 .faq-item {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
-  background: rgba(14, 18, 26, 0.75);
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(11, 20, 36, 0.04);
   overflow: hidden;
   transition: all var(--transition-fast);
 }
 
 .faq-item.active {
   border-color: var(--accent-gold);
-  background: rgba(18, 23, 34, 0.95);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(197, 154, 39, 0.12);
 }
 
 .faq-question {
@@ -47,14 +48,15 @@
 }
 
 .faq-item.active .faq-q-text {
-  color: var(--accent-gold-light);
+  color: var(--accent-gold-dark);
 }
 
 .faq-icon-circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: #FAF9F5;
+  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +66,8 @@
 
 .faq-item.active .faq-icon-circle {
   background: var(--accent-gold);
-  color: #08090C;
+  color: #FFFFFF;
+  border-color: var(--accent-gold);
   transform: rotate(180deg);
 }
 
@@ -75,7 +78,7 @@
 }
 
 .faq-item.active .faq-icon {
-  color: #08090C;
+  color: #FFFFFF;
 }
 
 .faq-answer-wrapper {
