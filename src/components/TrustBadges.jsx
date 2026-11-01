@@ -1,43 +1,57 @@
 import React from 'react';
-import { ShieldCheck, Star, Certificate } from '@phosphor-icons/react';
+import { 
+  CalendarCheck, 
+  ShieldCheck, 
+  Cpu, 
+  LightbulbFilament, 
+  Receipt 
+} from '@phosphor-icons/react';
 import './TrustBadges.css';
+
+const badges = [
+  {
+    icon: <CalendarCheck weight="duotone" />,
+    title: '45-Day Handover',
+    desc: 'Guaranteed move-in on schedule'
+  },
+  {
+    icon: <ShieldCheck weight="duotone" />,
+    title: '10-Year Warranty',
+    desc: 'Termite & moisture-proof materials'
+  },
+  {
+    icon: <Cpu weight="duotone" />,
+    title: 'German CNC Joinery',
+    desc: 'Factory-pressed precision edges'
+  },
+  {
+    icon: <LightbulbFilament weight="duotone" />,
+    title: 'Architectural Lighting',
+    desc: 'Concealed FRLS & magnetic tracks'
+  },
+  {
+    icon: <Receipt weight="duotone" />,
+    title: 'Transparent BOQ',
+    desc: 'Zero hidden pricing surprises'
+  }
+];
 
 const TrustBadges = () => {
   return (
     <section className="trust-badges-section">
       <div className="container">
-        <div className="trust-badges-grid">
-          
-          <div className="badge-item">
-            <div className="badge-icon">
-              <ShieldCheck weight="duotone" />
+        <div className="badges-grid">
+          {badges.map((badge, idx) => (
+            <div key={idx} className="badge-card-3d">
+              <div className="badge-icon-box">
+                {badge.icon}
+              </div>
+              <div className="badge-text-box">
+                <h4>{badge.title}</h4>
+                <p>{badge.desc}</p>
+              </div>
             </div>
-            <div className="badge-text">
-              <strong>100% Satisfaction</strong>
-              <span>Guaranteed Quality</span>
-            </div>
-          </div>
-          
-          <div className="badge-item">
-            <div className="badge-icon">
-              <Certificate weight="duotone" />
-            </div>
-            <div className="badge-text">
-              <strong>Licensed & Insured</strong>
-              <span>Professional Electricians</span>
-            </div>
-          </div>
-          
-          <div className="badge-item">
-            <div className="badge-icon">
-              <Star weight="duotone" />
-            </div>
-            <div className="badge-text">
-              <strong>5-Star Rated</strong>
-              <span>Loved by Locals</span>
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

@@ -1,0 +1,307 @@
+.lighting-simulator {
+  position: relative;
+  overflow: hidden;
+}
+
+.simulator-wrapper {
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: rgba(14, 18, 26, 0.85);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Controls Bar */
+.simulator-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 1.8rem;
+  background: rgba(20, 26, 38, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.controls-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-gold-light);
+}
+
+.scene-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.scene-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.scene-tab-btn:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #FFF;
+  border-color: var(--border-subtle);
+}
+
+.scene-tab-btn.active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-light);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.scene-btn-icon {
+  display: flex;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+}
+
+/* Simulator Viewport */
+.simulator-viewport {
+  position: relative;
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+}
+
+.simulator-image-layer {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.simulator-dynamic-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: background 0.8s ease;
+}
+
+/* Hotspots */
+.hotspot-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(14, 18, 26, 0.85);
+  border: 2px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold-light);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hotspot-pin:hover, .hotspot-pin.active {
+  transform: translate(-50%, -50%) scale(1.3);
+  background: var(--accent-gold);
+  color: #08090C;
+  box-shadow: 0 0 20px var(--accent-gold);
+}
+
+.pin-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  animation: hotspotRipple 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes hotspotRipple {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.active-scene-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(8, 9, 12, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: var(--text-main);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.scene-kelvin {
+  color: var(--accent-gold-light);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.scene-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+/* Details Card on Right Side */
+.simulator-details-card {
+  padding: 2rem 1.8rem;
+  background: rgba(16, 21, 30, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.details-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.details-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.details-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.details-header h4 {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.details-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.details-footer {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.scene-mood-info {
+  margin-bottom: 1.2rem;
+}
+
+.mood-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.mood-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* Range Bar */
+.simulator-range-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.9rem 1.8rem;
+  background: rgba(11, 14, 20, 0.9);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.range-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.intensity-slider {
+  flex: 1;
+  max-width: 380px;
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 900px) {
+  .simulator-viewport {
+    grid-template-columns: 1fr;
+  }
+  .simulator-image-layer {
+    min-height: 320px;
+  }
+  .simulator-details-card {
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    padding: 1.4rem;
+  }
+  .scene-buttons-group {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.4rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scene-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .simulator-controls-bar {
+    padding: 1rem;
+  }
+  .simulator-range-bar {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+}

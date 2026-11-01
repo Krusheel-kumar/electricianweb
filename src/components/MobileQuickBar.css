@@ -1,0 +1,71 @@
+.mobile-quick-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(8, 10, 15, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.35fr;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  gap: 0.6rem;
+  z-index: 1050;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 46px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.quick-call {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-call:active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.quick-whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.35);
+}
+
+.quick-whatsapp:active {
+  background: #25D366;
+  color: #08090C;
+}
+
+.quick-consultation {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 60%, #A68019 100%);
+  color: #08090C;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+}
+
+.quick-consultation:active {
+  transform: scale(0.97);
+}
+
+/* Add bottom padding to body on mobile so footer isn't obscured by fixed bar */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+}

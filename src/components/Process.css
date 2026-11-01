@@ -1,0 +1,139 @@
+.process {
+  position: relative;
+  background-color: var(--bg-primary);
+}
+
+.process-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.process-step-card {
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: rgba(14, 18, 26, 0.75);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.process-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+}
+
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.step-number-pill {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.step-duration {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.step-icon-wrapper {
+  font-size: 2rem;
+  color: var(--accent-gold-light);
+  margin-bottom: 1rem;
+}
+
+.process-step-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.step-deliverable-box {
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.deliverable-label {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.deliverable-text {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* CTA Banner */
+.process-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.2rem 2.5rem;
+  background: linear-gradient(135deg, rgba(24, 30, 42, 0.9) 0%, rgba(14, 18, 26, 0.95) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cta-banner-text h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.cta-banner-text p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+@media (max-width: 850px) {
+  .process-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .process-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+  .process-cta-banner .btn {
+    width: 100%;
+  }
+}
