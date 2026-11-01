@@ -11,7 +11,7 @@ const Footer = ({ onOpenConsultation }) => {
           <div className="footer-brand">
             <a href="#" className="logo-wrapper">
               <img 
-                src="/assets/logo.png" 
+                src="/assets/logo-clean.png" 
                 alt="VenkeyLavy Interiors" 
                 className="footer-brand-logo"
               />
